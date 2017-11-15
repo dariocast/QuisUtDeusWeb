@@ -13,8 +13,9 @@ $percorso = "./audio/";
 
 if(isset($_POST['titolo'])) {
     $titolo = $_POST['titolo'];
-    $temp = date_parse($_POST['data']);
-    $data = $temp["day"]."-".$temp["month"]."-".$temp[year];
+    /*$temp = date_parse($_POST['data']);
+    $data = $temp["day"]."-".$temp["month"]."-".$temp["year"];*/
+    $data = $_POST['data'];
     $luogo = $_POST['luogo'];
     $occasione = $_POST['occasione'];
     $momento = $_POST['momento'];

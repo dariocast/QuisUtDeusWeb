@@ -12,23 +12,26 @@ $database = new Medoo([
     'password' => '',
 ]);
 
-$datas = $database->select("incontro", [
+$datiIncontri = $database->select("incontro", [
     'titolo', 'data', 'luogo', 'occasione', 'momento', 'url'
 ], [
-    //no where clause
+    "ORDER" => ["data" => "DESC"],
+    "LIMIT" => 20
 ]);
 
 $incontri = array();
-foreach($datas as $data)
+foreach($datiIncontri as $incontro)
 {
+    $temp = date_parse($incontro['data']);
+    $data = $temp["day"]."-".$temp["month"]."-".$temp["year"];
     $incontri[] =  array(
-        "titolo" => $data['titolo'],
-        "data" => $data['data'],
-        "luogo" => $data['luogo'],
-        "occasione" => $data['occasione'],
-        "momento" => $data['momento'],
+        "titolo" => $incontro['titolo'],
+        "data" => $data,
+        "luogo" => $incontro['luogo'],
+        "occasione" => $incontro['occasione'],
+        "momento" => $incontro['momento'],
         "mediaType" => "",
-        "url" => "http://dariocast.altervista.org/quisutdeus/audio/".$data['url']
+        "url" => "http://dariocast.altervista.org/quisutdeus/audio/".$incontro['url']
     );
 }
 
