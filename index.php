@@ -8,7 +8,7 @@
 $realm = 'Restricted area';
 
 //user => password
-$users = array('quisutdeus' => 'Qui5@pp','dario' => '232323');
+//USERNAME AND PASSWORD NOT ON REPOSITORY!!!
 
 
 if (empty($_SERVER['PHP_AUTH_DIGEST'])) {
