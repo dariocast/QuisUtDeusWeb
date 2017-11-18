@@ -7,7 +7,6 @@
  */
 $realm = 'Restricted area';
 
-//user => password
 $users = array(Constants::$USERNAME1 => Constants::$PASS1, Constants::$USERNAME2 => Constants::$PASS2);
 
 
