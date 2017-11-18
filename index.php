@@ -8,7 +8,7 @@
 $realm = 'Restricted area';
 
 //user => password
-$users = array('quisutdeus' => 'Qui5@pp','dario' => '232323');
+$users = array(Constants::$USERNAME1 => Constants::$PASS1, Constants::$USERNAME2 => Constants::$PASS2);
 
 
 if (empty($_SERVER['PHP_AUTH_DIGEST'])) {
