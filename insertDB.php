@@ -6,6 +6,7 @@
  * Time: 16:42
  */
 require  'Medoo.php';
+require  'constants.php';
 
 use Medoo\Medoo;
 
@@ -28,11 +29,11 @@ if(isset($_POST['titolo'])) {
 
             $database = new Medoo([
                 // required
-                'database_type' => 'mysql',
-                'database_name' => 'my_dariocast',
-                'server' => 'localhost',
-                'username' => 'dariocast',
-                'password' => '',
+                'database_type' => Constants::$DB_TYPE,
+                'database_name' => Constants::$DB_NAME,
+                'server' => Constants::$DB_SERVER,
+                'username' => Constants::$DB_USERNAME,
+                'password' => Constants::$DB_PASS,
             ]);
 
             $database->insert('incontro',[
