@@ -44,14 +44,14 @@ if(isset($_POST['titolo'])) {
                 'url' => $url
             ]);
 
-            setcookie("success", "true", time() + (86400 * 30), "/"); // 86400 = 1 day
+            setcookie("success", "true", time() + (60), "/"); // 86400 = 1 day
             header("location: index.php");
         } else {
-            setcookie("mp3error", "true", time() + (86400 * 30), "/"); // 86400 = 1 day
+            setcookie("mp3error", "true", time() + (60), "/"); // 86400 = 1 day
             header("location: index.php");
         }
     }
 } else {
-    setcookie("success", "false", time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie("success", "false", time() + (60), "/"); //60 = 60 secondi, 86400 = 1 day
     header("location: index.php");
 }
