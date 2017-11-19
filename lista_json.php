@@ -37,7 +37,7 @@ foreach($datiIncontri as $incontro)
 
 function mySort($a, $b)
 {
-    return $a['data'] < $b['data'];
+    return $a['data'] > $b['data'];
 }
 
 usort($incontri, "mySort");
