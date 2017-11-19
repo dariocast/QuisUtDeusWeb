@@ -5,6 +5,8 @@
  * Date: 14/11/17
  * Time: 13:41
  */
+require  'constants.php';
+
 $realm = 'Restricted area';
 
 $users = array(Constants::$USERNAME1 => Constants::$PASS1, Constants::$USERNAME2 => Constants::$PASS2);
@@ -21,8 +23,14 @@ if (empty($_SERVER['PHP_AUTH_DIGEST'])) {
 
 // analisi della variabile PHP_AUTH_DIGEST
 if (!($data = http_digest_parse($_SERVER['PHP_AUTH_DIGEST'])) ||
-    !isset($users[$data['username']]))
+    !isset($users[$data['username']])) {
+
+    header('HTTP/1.1 401 Unauthorized');
+    header('WWW-Authenticate: Digest realm="'.$realm.
+        '",qop="auth",nonce="'.uniqid().'",opaque="'.md5($realm).'"');
+
     die('Nome utente o password errati!');
+}
 
 
 // generazione di una risposta valida
