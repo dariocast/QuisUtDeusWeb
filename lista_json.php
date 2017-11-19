@@ -1,5 +1,6 @@
 <?php
 require  'Medoo.php';
+require 'constants.php';
 
 use Medoo\Medoo;
 
