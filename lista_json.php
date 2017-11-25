@@ -36,10 +36,10 @@ foreach($datiIncontri as $incontro)
     );
 }
 
-function mySort($a, $b)
-{
-    return $a['data'] > $b['data'];
-}
-
-usort($incontri, "mySort");
+//function mySort($a, $b)
+//{
+//    return $a['data'] > $b['data'];
+//}
+//
+//usort($incontri, "mySort");
 echo json_encode($incontri);
