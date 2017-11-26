@@ -24,8 +24,8 @@ if(isset($_POST['titolo'])) {
 
     if (is_uploaded_file($_FILES['file']['tmp_name'])) {
         if ($_FILES['file']['type']=="audio/mp3") {
-            move_uploaded_file($_FILES['file']['tmp_name'], $percorso.$_FILES['file']['name']);
-            $url = "audio_".date("m.d.y")."mp3";
+            move_uploaded_file($_FILES['file']['tmp_name'], $percorso.trim($_FILES['file']['name']));
+            $url = trim($_FILES['file']['name']);
 
             $database = new Medoo([
                 // required
